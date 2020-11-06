@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" sizes="" href="https://img.icons8.com/carbon-copy/2x/valorant.png">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="css/all.css" />
+        <title>Specifications</title>
+    </head>
+    <body id="bg-img">
+        <header>
+            <div class="logo-container">
+                <!-- <i class="fas fa-coffee fa-3x"></i> -->
+                <a href="./index.html"><img src="./img/logo.png" alt=""></a>
+                <!-- <h3 class="lg-heading">Valorant Cafe</h3> -->
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./reservation.html" class="nav-link">Reservation</a></li>
+                    <li><a href="#" class="nav-link active">Specifications</a></li>
+                    <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h2 class="spec">PC Specifications</h2>
+
+        <main id="specs">
+            <div class="contain">
+                <div class="box">
+                    <div class="content">
+                        <h2>Regular PC</h2>
+                        <p>
+                            Perfect for those who just wants a casual session. <br><br>
+                            <strong>Specs : <br></strong> 
+                            Intel i5-10600K. <br>
+                            Nvidia GeForce GTX 1080. <br>
+                            24" 144hz Monitor. <br><br>
+                            Rent fee : RM5 per hour. <br>
+                            Reservation fee : RM10. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="contain">
+                <div class="box">
+                    <div class="content">
+                        <h2>VIP PC</h2>
+                        <p>
+                            Want a competitive edge over the others? Choose this! <br><br>
+                            <strong>Specs : <br></strong> 
+                            Intel i7-10700K. <br>
+                            Nvidia GeForce RTX 2080 Super. <br>
+                            27" 240hz Monitor. <br><br>
+                            Rent fee : RM10 per hour. <br>
+                            Reservation fee : RM10.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contain">
+                <div class="box">
+                    <div class="content">
+                        <h2>Streamer PC</h2>
+                        <p>
+                            High-end PC that comes with it's own soundproofed room! <br><br>
+                            <strong>Specs : <br></strong> 
+                            Intel i9-10900K. <br>
+                            Nvidia GeForce RTX 3090. <br>
+                            Dual 27" 240hz Monitor. <br><br>
+                            Rent fee : RM20 per hour. <br>
+                            Reservation fee : RM10.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SVG Animation -->
+            <svg>
+                <filter id="wavy">
+                    <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2">
+                        <animate attributeName="baseFrequency" dur="60s" values="0.02;0.05;0.02" repeatCount="indefinite"/>
+                    </feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" scale="30"/>
+                </filter>
+            </svg>
+        </main>
+        
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

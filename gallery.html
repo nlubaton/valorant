@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" sizes="" href="https://img.icons8.com/carbon-copy/2x/valorant.png">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="css/all.css" />
+        <title>Gallery</title>
+    </head>
+    <body id="bg-img">
+        <header>
+            <div class="logo-container">
+                <!-- <i class="fas fa-coffee fa-3x"></i> -->
+                <a href="./index.html"><img src="./img/logo.png" alt=""></a>
+                <!-- <h3 class="lg-heading">Valorant Cafe</h3> -->
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./reservation.html" class="nav-link">Reservation</a></li>
+                    <li><a href="./specifications.html" class="nav-link">Specifications</a></li>
+                    <li><a href="#" class="nav-link active">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h2 class="spec">Gallery</h2>
+        <main id="gallery">
+            <div class="contain">
+                <div class="box">
+                    <div class="slider">
+                        <div class="slides">
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <!-- Slides -->
+                            <div class="slide first">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./img/2.jpg" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./img/3.jpg" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./img/4.jpg" alt="">
+                            </div>
+                            <!-- Auto Nav -->
+                            <div class="nav-auto">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                                <div class="auto-btn3"></div>
+                                <div class="auto-btn4"></div>
+                            </div>
+                        </div>
+                        <!-- Manual Nav -->
+                        <div class="nav-man">
+                            <label for="radio1" class="man-btn"></label>
+                            <label for="radio2" class="man-btn"></label>
+                            <label for="radio3" class="man-btn"></label>
+                            <label for="radio4" class="man-btn"></label>
+                        </div>
+                    </div>
+                    <svg>
+                        <filter id="wavy">
+                            <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2">
+                                <animate attributeName="baseFrequency" dur="60s" values="0.02;0.05;0.02" repeatCount="indefinite"/>
+                            </feTurbulence>
+                            <feDisplacementMap in="SourceGraphic" scale="30"/>
+                        </filter>
+                    </svg>
+                </div>
+            </div>
+        </main>
+        
+        <script src="js/main.js"></script>
+        <script src="js/slider.js"></script>
+
+    </body>
+</html>

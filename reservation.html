@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" sizes="" href="https://img.icons8.com/carbon-copy/2x/valorant.png">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="css/all.css" />
+        <title>Reservation</title>
+    </head>
+    <body id="bg-img">
+        <header>
+            <div class="logo-container">
+                <!-- <i class="fas fa-coffee fa-3x"></i> -->
+                <a href="./index.html"><img src="./img/logo.png" alt=""></a>
+                <!-- <h3 class="lg-heading">Valorant Cafe</h3> -->
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active">Reservation</a></li>
+                    <li><a href="./specifications.html" class="nav-link">Specifications</a></li>
+                    <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="reservation">
+            <div class="container">
+                <div class="headimg">
+                <!-- img -->
+                </div>
+                <div class="content">
+                    <h3>Reservations</h3>
+                    <form action="./specifications.html" method="post">
+                        <!-- Name -->
+                        <div class="row">
+                            <input type="text" required=""><label>Full Name</label>
+                        </div>
+                        <!-- Phone -->
+                        <div class="row">
+                            <input type="text" required=""><label>Phone Number</label>
+                        </div>
+                        <!-- Drop down menu -->
+                        <div class="row">
+                            <select name="table" id="tableType" oninput="price();seats()" required="">
+                                <option value="" disabled selected hidden></option>
+                                <option value="5">Regular PC</option>
+                                <option value="10">VIP PC</option>
+                                <option value="20">Streamer PC (Room Included)</option>
+                            </select>
+                            <label>PC Type</label>
+                        </div>
+                        <!-- Duration -->
+                        <div class="row">
+                            <input class="duration" type="number" min="1" oninput="price()" required=""><label>How many hours?</label>
+                        </div>
+                        <!-- Availability -->
+                        <div class="row">
+                            <p class="right">Availability : <span id="available">-</span> seats</p>
+                        </div>
+                        <!-- Fee -->
+                        <div class="row">
+                            <p class="right">Reservation fee is : RM <span id="fee">0</span> </p>
+                        </div>
+                        <!-- Button -->
+                        <div class="row">
+                            <input type="submit" value="BOOK PC">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
