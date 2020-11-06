@@ -85,11 +85,12 @@
                     dataType: "xml",
                     success: function(d)
 					{
+							alert("Reservation made!");
+							window.location.href = './tq.html';
 					},
 					error: function(x, y, z)
 						{
-							alert("Reservation made!")
-							window.location.href = './tq.html';
+							alert("Error making reservation!);
 						}
                 });
 				return false;
