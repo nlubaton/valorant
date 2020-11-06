@@ -13,19 +13,20 @@
               crossorigin="anonymous">
         </script>
         <script>
-            function SubForm (){
-                $.ajax({
-                    url:'https://api.apispreadsheets.com/data/3139/',
-                    type:'post',
-                    data:$("#myForm").serializeArray(),
-                    success: function(){
-                      alert("Reservation made!")
-                    },
-                    error: function(){
-                      alert("Reservation error!")
-                    }
-                });
-            }
+            var $form = $('form#myForm'),
+            url = 'https://script.google.com/macros/s/AKfycbzJIjTA09ZN336b9x3vAzXhGug2msVvRUz7f70t7NiQMqJJQOSL/exec'
+
+            $('#submit-form').on('click', function(e) {
+              e.preventDefault();
+              var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).success(
+                // do something
+              );
+            })
         </script>
     </head>
     <body id="bg-img">
