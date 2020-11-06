@@ -7,6 +7,26 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="css/all.css" />
         <title>Reservation</title>
+        <script
+              src="https://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous">
+        </script>
+        <script>
+            function SubForm (){
+                $.ajax({
+                    url:'https://api.apispreadsheets.com/data/3139/',
+                    type:'post',
+                    data:$("#myForm").serializeArray(),
+                    success: function(){
+                      alert("Reservation made!")
+                    },
+                    error: function(){
+                      alert("Reservation error!")
+                    }
+                });
+            }
+        </script>
     </head>
     <body id="bg-img">
         <header>
@@ -28,7 +48,7 @@
                 </div>
                 <div class="content">
                     <h3>Reservations</h3>
-                    <form action="./tq.html" method="get">
+                    <form id="myForm" action="./tq.html" method="get">
                         <!-- Name -->
                         <div class="row">
                             <input type="text" required=""><label>Full Name</label>
