@@ -30,7 +30,7 @@
                 </div>
                 <div class="content">
                     <h3>Reservations</h3>
-                    <form id="myForm" onsubmit="return postGoogle();" action="./tq.html">
+                    <form id="myForm" onsubmit="return postGoogle();">
                         <!-- Name -->
                         <div class="row">
                             <input id="fullName" name="entry.304059106" type="text" required=""><label>Full Name</label>
@@ -88,8 +88,8 @@
 					},
 					error: function(x, y, z)
 						{
-							$('#success-msg').show();
-							$('#form').hide();
+							alert("Reservation made!")
+							window.location.href = './tq.html';
 						}
                 });
 				return false;
