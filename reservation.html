@@ -7,27 +7,8 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="css/all.css" />
         <title>Reservation</title>
-        <script
-              src="https://code.jquery.com/jquery-3.4.1.js"
-              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-              crossorigin="anonymous">
-        </script>
-        <script>
-            var $form = $('form#myForm'),
-            url = 'https://script.google.com/macros/s/AKfycbzJIjTA09ZN336b9x3vAzXhGug2msVvRUz7f70t7NiQMqJJQOSL/exec'
-
-            $('#submit-form').on('click', function(e) {
-              e.preventDefault();
-              var jqxhr = $.ajax({
-                url: url,
-                method: "GET",
-                dataType: "json",
-                data: $form.serializeObject()
-              }).success(
-                // do something
-              );
-            })
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
     </head>
     <body id="bg-img">
         <header>
@@ -49,18 +30,18 @@
                 </div>
                 <div class="content">
                     <h3>Reservations</h3>
-                    <form id="myForm" action="./tq.html" method="get">
+                    <form id="myForm" onsubmit="return postGoogle();" action="./tq.html">
                         <!-- Name -->
                         <div class="row">
-                            <input type="text" required=""><label>Full Name</label>
+                            <input id="fullName" name="entry.304059106" type="text" required=""><label>Full Name</label>
                         </div>
                         <!-- Phone -->
                         <div class="row">
-                            <input type="text" required=""><label>Phone Number</label>
+                            <input id= "phoneNum" name="entry.287185522" type="text" required=""><label>Phone Number</label>
                         </div>
                         <!-- Drop down menu -->
                         <div class="row">
-                            <select name="table" id="tableType" oninput="price();seats()" required="">
+                            <select name="table" id="tableType" name="entry.1604872951" oninput="price();seats()" required="">
                                 <option value="" disabled selected hidden></option>
                                 <option value="5">Regular PC</option>
                                 <option value="10">VIP PC</option>
@@ -70,7 +51,7 @@
                         </div>
                         <!-- Duration -->
                         <div class="row">
-                            <input class="duration" type="number" min="1" oninput="price()" required=""><label>How many hours?</label>
+                            <input id="durHours" name="entry.1495077896" class="duration" type="number" min="1" oninput="price()" required=""><label>How many hours?</label>
                         </div>
                         <!-- Availability -->
                         <div class="row">
@@ -90,6 +71,30 @@
         </main>
 
         <script src="js/main.js"></script>
+        <script>
+        function postGoogle() {
+            var field1 = $("#fullName").val();
+            var field2 = $("#phoneNum").val();
+            var field3 = $("#tableType option:selected").text();
+            var field4 = $("#durHours").val();
+            
+            $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSeCi4Rd7lxiBRnMQxzSWvpEmRKxbhn0CgjesUiPMlf9nLR-0A/formResponse?",
+					data: {"entry.304059106": field1, "entry.287185522": field2, "entry.1604872951": field3, "entry.1495077896": field4},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+							$('#success-msg').show();
+							$('#form').hide();
+						}
+                });
+				return false;
+        }
+        </script>
 
     </body>
 </html>
