@@ -30,7 +30,7 @@
                 </div>
                 <div class="content">
                     <h3>Reservations</h3>
-                    <form id="myForm" onsubmit="return postGoogle();">
+                    <form id="myForm" onsubmit="return postGoogle(); window.location.href = 'https://nlubaton.github.io/valorant/tq.html'">
                         <!-- Name -->
                         <div class="row">
                             <input id="fullName" name="entry.304059106" type="text" required=""><label>Full Name</label>
@@ -85,12 +85,11 @@
                     dataType: "xml",
                     success: function(d)
 					{
-							alert("Reservation made!");
-							window.location.href = './tq.html';
 					},
 					error: function(x, y, z)
 						{
-							alert("Error making reservation!);
+							$('#success-msg').show();
+							$('#form').hide();
 						}
                 });
 				return false;
